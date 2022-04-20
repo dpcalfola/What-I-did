@@ -7,9 +7,11 @@
 <body>
 {% include 'header.html' %}
 
-
-<h1>hello base.html</h1>
+{% block content %}
+{% endblock %}
 
 {% include 'footer.html' %}
+{# Bootstrap .js #}
+<script src="{% static 'dist/js/bootstrap.js' %}"></script>
 </body>
 </html>

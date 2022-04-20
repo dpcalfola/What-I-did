@@ -133,3 +133,6 @@ WIDid_venv
 
 # idea
 .idea
+
+# node_modules (bootstrap)
+node_modules

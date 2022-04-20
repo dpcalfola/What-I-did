@@ -1,0 +1,22 @@
+{
+  "name": "what_idid",
+  "version": "1.0.0",
+  "description": "Django Web development project (2022-04-18~",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpcalfola/What_IDid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpcalfola/What_IDid/issues"
+  },
+  "homepage": "https://github.com/dpcalfola/What_IDid#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

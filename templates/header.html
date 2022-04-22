@@ -1,6 +1,7 @@
+{% load socialaccount %}
 <div class="nav_css">
     <nav class="py-1">
-        <div class="container d-flex flex-wrap">
+        <div class="container d-flex flex-wrap mt-1">
             <ul class="nav me-auto">
                 <li class="nav-item"><a href="#" class="nav_menu_css nav-link px-2">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav_menu_css nav-link px-2">Features</a></li>
@@ -9,7 +10,15 @@
                 <li class="nav-item"><a href="#" class="nav_menu_css nav-link px-2">About</a></li>
             </ul>
             <ul class="nav">
-                <li class="nav-item"><a href="#" class="account_link nav-link px-3">Login</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href='/accounts/logout' class="account_link nav-link px-3">logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{% provider_login_url 'google' %}" class="account_link nav-link px-3">Login</a>
+                    </li>
+                {% endif %}
                 <li class="nav-item"><a href="#" class="account_link nav-link px-3">Sign up</a></li>
             </ul>
         </div>
@@ -19,8 +28,8 @@
             <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                 <span class="main_logo">Cocktail ☆ How did i make this?</span>
             </a>
-            <form class="col-12 col-lg-auto my-auto d-flex">
-                <input type="search" class="search_css form-control mx-2" placeholder="" aria-label="Search">
+            <form class="col-12 col-lg-auto my-auto d-flex mb-3">
+                <input type="search" class="search_css form-control me-3" placeholder="" aria-label="Search">
                 <button type="submit" class="button_css btn">Search</button>
             </form>
         </div>

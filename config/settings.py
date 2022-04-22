@@ -39,11 +39,19 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Added apps ( allauth )
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # allauth social account list
+    'allauth.socialaccount.providers.google',
+
 ]
 
 PROJECT_APPS = [
     'main.apps.MainConfig',
-
+    'accountapp.apps.AccountappConfig'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -132,3 +140,20 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Allauth setting (1)
+AUTHENTICATION_BACKENDS = [
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Allauth setting (2)
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGIN_REDIRECT_URL = '/'
